@@ -1,0 +1,369 @@
+
+/* Google Font import - special font */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+/* ---- RESET & BASE ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: #f0f4f8;
+  min-height: 100vh;
+}
+
+/* ---- MAIN CONTAINER ---- */
+.app-container {
+  max-width: 480px;       /* Mobile width */
+  margin: 0 auto;         /* Center */
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+/* ---- HEADER ---- */
+.header {
+  background: #c0392b;    /* Dark red */
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-icon {
+  font-size: 28px;
+}
+
+.header-title {
+  color: white;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.header-sub {
+  color: rgba(255,255,255,0.8);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+/* GPS Badge */
+.gps-badge {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.gps-dot {
+  width: 8px;
+  height: 8px;
+  background: #2ecc71;    /* Green dot */
+  border-radius: 50%;
+  animation: blink 1s infinite; /* Blinking animation */
+}
+
+/* ---- MAIN CONTENT ---- */
+.main-content {
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ---- SOS SECTION ---- */
+.sos-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+.sos-hint {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+}
+
+/* SOS BUTTON - Main big button */
+.sos-btn {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;           /* Circle shape */
+  border: 5px solid #e74c3c;
+  background: #fdeaea;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: all 0.2s;         /* Smooth animation */
+  box-shadow: 0 0 0 0 rgba(231,76,60,0.4);
+}
+
+/* Button hover effect */
+.sos-btn:hover {
+  transform: scale(1.05);
+  background: #fad7d7;
+}
+
+/* Button active (pressed) effect */
+.sos-btn:active {
+  transform: scale(0.97);
+}
+
+/* SOS Button - When CALLING (sosActive = true) */
+.sos-btn--calling {
+  background: #e74c3c;
+  border-color: #c0392b;
+  animation: pulse 1.2s infinite; /* Pulsing animation */
+}
+
+.sos-btn--calling .sos-number,
+.sos-btn--calling .sos-label {
+  color: white;
+}
+
+.sos-number {
+  font-size: 42px;
+  font-weight: 800;
+  color: #c0392b;
+  line-height: 1;
+}
+
+.sos-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #c0392b;
+  letter-spacing: 2px;
+}
+
+/* STATUS BOX */
+.status-box {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+  padding: 12px 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.status-box--active {
+  background: #fff3cd;
+  border-color: #ffc107;
+}
+
+.status-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+.call-time {
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
+}
+
+/* ---- CARDS ---- */
+.card {
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+/* Green card - ambulance info */
+.card--green {
+  background: #f0fdf4;
+  border-color: #86efac;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  flex: 1;
+}
+
+/* ETA Badge */
+.eta-badge {
+  background: #dcfce7;
+  color: #166534;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+/* ---- LOCATION INFO ---- */
+.location-info {
+  padding: 8px 0;
+}
+
+.location-address {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.location-coords {
+  font-size: 13px;
+  color: #888;
+  font-family: monospace;
+  margin-top: 4px;
+}
+
+.loading-text {
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* ---- DRIVER GRID ---- */
+.driver-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 columns */
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.driver-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.driver-label {
+  font-size: 11px;
+  color: #888;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.driver-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* CALL BUTTON */
+.call-btn {
+  display: block;
+  background: #16a34a;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.call-btn:hover {
+  background: #15803d;
+}
+
+/* ---- TIPS LIST ---- */
+.tips-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tips-list li {
+  font-size: 14px;
+  color: #555;
+  padding-left: 20px;
+  position: relative;
+}
+
+/* Bullet point */
+.tips-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #e74c3c;
+  font-weight: 700;
+}
+
+/* ---- ANIMATIONS ---- */
+
+/* SOS Button pulsing */
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(231,76,60,0.6); }
+  50%  { box-shadow: 0 0 0 20px rgba(231,76,60,0); }
+  100% { box-shadow: 0 0 0 0 rgba(231,76,60,0); }
+}
+
+/* GPS dot blinking */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.2; }
+}
+
+/* Blue card - DB saved confirmation */
+.card--blue {
+  background: #eff6ff;
+  border-color: #93c5fd;
+}
+
+/* Navigation Bar */
+.nav-bar {
+  background: #c0392b;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.nav-logo {
+  color: white;
+  font-size: 16px;
+  font-weight: 800;
+}
+.nav-links {
+  display: flex;
+  gap: 12px;
+}
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.2);
+}
+.nav-link:hover {
+  background: rgba(255,255,255,0.35);
+}
+.eta-badge--red {
+  background: #fee2e2;
+  color: #dc2626;
+}
